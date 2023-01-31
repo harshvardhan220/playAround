@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" text="text/css" href="style.css">
+    <link type="image/png" sizes="96x96" rel="icon" href="/favicon.png">
+    <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"></script>
+    <script defer src="https://zchatserver.glitch.me/socket.io/socket.io.js"></script>
+    <script defer src="script.js"></script>
+    <title>Chat_UI</title>
+</head>
+
+<body>
+    <audio id = "incoming">
+        <source src = "incoming_tone.mp3">
+    </audio>
+    <audio id = "outgoing">
+        <source src = "outgoing_tone.mp3">
+    </audio>
+    <div class="chatui">
+        <div class="room-header">
+            <div class="room-header-img">
+                <img src="https://source.unsplash.com/user/erondu/200x200">
+            </div>
+            <div class="room-name">
+                <h4>#PlayAround</h4>
+            </div>
+            <div class="room-header-icons">
+                <ion-icon name="information-outline" class="fa"></ion-icon>
+                <ion-icon name="people-outline" class="fa"></ion-icon>
+                <ion-icon name="notifications-outline" class="fa" id = "notification-toggle"></ion-icon>
+            
+
+
+            </div>
+        </div>
+
+        <div class="chat-body" id="chatBody">
+            <!-- Everything will be dynamically added here  -->
+        </div>
+
+        <div class="modal active" id="modal">
+            <div class="modal-header">
+                <img src="https://avatars.dicebear.com/api/jdenticon/.svg" id="nameicon">
+            </div>
+            <form>
+                <div class="modal-body">
+
+                    <input type="text" maxlength="512" class="input-your-name" id="nameText"
+                        placeholder="What's Your Name ?" autocomplete="off" value="">
+                    <div class="modal-buttons">
+                        <button class = "submit-name" id="submitName">Join the Room</button>
+                        <ion-icon name="enter-outline" class="fa" id="SubmitNameIcon"></ion-icon>
+                    </div>
+
+
+                </div>
+            </form>
+        </div>
+
+        <div class="footer">
+            <form id="send-container" autocomplete="off">
+                <textarea id="message-input" placeholder="Type Your Message...." autocomplete="off"
+                    name="hidden"></textarea>
+                <div class="footer-icons">
+                    <ion-icon name="paper-plane-outline" class="fa plane" id="sendButton"></ion-icon>
+                    <ion-icon name="happy-outline" class="fa happy"></ion-icon>
+                    <ion-icon name="attach-outline" class="fa attach"></ion-icon>
+
+                </div>
+            </form>
+        </div>
+
+
+    </div>
+
+    <div id="overlay" class="active"></div>
+</body>
+
+</html>
+
+<!-- <div class="received-chats">
+                <div class="received-chat-profile">
+                    <img src="https://source.unsplash.com/user/erondu/200x200">
+                    <span class="name-other">Atharva</span>
+                    <span class="time-other">11:30 AM |March 29</span>
+                </div>
+                <div class="received-msg">
+                    <p>Hi Bro !</p>
+                </div>
+            </div>
+
+            <div class="outgoing-chats">
+                <div class="outgoing-chat-profile">
+                    <img src="https://source.unsplash.com/user/erondu/200x200">
+                    <span class="name-me">You</span>
+                </div>
+                <div class="outgoing-msg">
+                    <p>Heyy, How are You?</p>
+                    
+                    <span class="time-me">11:30 AM |March 29</span>
+                </div>
+            </div> -->
